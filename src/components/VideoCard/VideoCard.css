@@ -1,0 +1,46 @@
+.video-card__container {
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.video-card__collapsed {
+    width: 0rem;
+    opacity: 0;
+}
+
+.video-card__expanded {
+    width: 25rem;
+    opacity: 1;
+    animation-name: video-appearance;
+    animation-duration: 3s;
+}
+
+.video__link {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    transform: translateY(150%);
+}
+
+.movie {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 500px;
+} 
+
+@keyframes video-appearance {
+    from {
+        width: 0%;
+        opacity: 0;
+    }
+    to {
+        width: 25rem;
+        opacity: 1;
+    }
+  }

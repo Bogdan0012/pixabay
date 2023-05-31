@@ -31,3 +31,17 @@
     right: 0%;
     transform: translate(50%, -50%);
 }
+
+.radio {
+    color: #fff;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.radio-container div {
+    margin: 10px;
+}
