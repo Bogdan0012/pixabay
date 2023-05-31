@@ -1,0 +1,57 @@
+.error-txt {
+    text-align: center;
+    color: #fff;
+}
+
+.user__image__container {
+    width: 15rem;
+    min-width: 100px;
+    float: left;
+}
+
+.user__image__container img {
+    width: 100%;
+}
+
+.user__image__container p {
+    margin: 0;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: blueviolet;
+    color: #fff
+}
+
+.user__images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image {
+    height: 18rem;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+.row{
+    clear: both;
+}
+
+.container {
+    width: 80%;
+    max-width: 960px;
+    margin: auto;
+}
+
+@media screen and (max-width: 720px) {
+    .user__image__container {
+        width: 100%;
+        float: none;
+    }
+  }
