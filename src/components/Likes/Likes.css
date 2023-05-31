@@ -1,0 +1,10 @@
+.likes {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: blueviolet;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}

@@ -1,6 +1,9 @@
 
 
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Likes from '../Likes/Likes';
+import UserInfo from '../UserInfo/UserInfo';
 import './ImageCard.css';
 
 const ImageCard = ({ item }) => {
@@ -19,7 +22,9 @@ const ImageCard = ({ item }) => {
 
     return (
         <div className={ `image-card__container ${ isCollapsed ? 'image-card__collapsed' : 'image-card__expanded' }` }>
-        <div className={ `image-card ${ isCollapsed ? 'image-card__collapsed' : 'image-card__expanded' }` } style={{ backgroundImage: `url(${ item.largeImageURL })`}}></div>
+            <a href={ item.largeImageURL } target="_blank"><div className={ `image-card ${ isCollapsed ? 'image-card__collapsed' : 'image-card__expanded' }` } style={{ backgroundImage: `url(${ item.largeImageURL })`}}></div></a>
+            <Link to={`/user/${ item.user }`}><UserInfo item={ item } /></Link>
+            <Likes likes={ item.likes } />
         </div>
     );
 }

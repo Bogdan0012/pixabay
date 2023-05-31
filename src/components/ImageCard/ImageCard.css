@@ -9,6 +9,7 @@
 
 .image-card__container {
     margin: 10px;
+    position: relative;
 }
 
 .image-card:hover {
