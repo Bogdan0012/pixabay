@@ -29,7 +29,7 @@ const searchImagesByUser = async (username) => {
 
   try {
     const response = await axios.get(
-      `${uri}/PixabayApi/PixabayApi/GetPicturesByUser/${encodeURIComponent(username)}`
+      `${uri}/PixabayApi/GetPicturesByUser/${encodeURIComponent(username)}`
     );
 
     const hits = response.data;
