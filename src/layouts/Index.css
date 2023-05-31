@@ -1,0 +1,36 @@
+.brand__title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 6rem;
+    color: #fff;
+    background-color: #8EE7DC;
+    padding: 20px;
+    margin-bottom: 2rem;
+}
+
+.result__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.text-error {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.container {
+    width: 80%;
+    max-width: 960px;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 720px) {
+    .brand__title {
+        font-size: 2rem;
+        padding: 10px;
+    }
+  }

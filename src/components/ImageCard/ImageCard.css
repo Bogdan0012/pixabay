@@ -1,0 +1,44 @@
+.image-card {
+    height: 18rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.image-card__container {
+    margin: 10px;
+}
+
+.image-card:hover {
+    height: 18.1rem;
+    width: 18.1rem;
+    transition: width, box-shadow 200ms;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px #00000056;
+}
+
+.image-card__collapsed {
+    width: 0rem;
+    opacity: 0;
+}
+
+.image-card__expanded {
+    width: 18rem;
+    opacity: 1;
+    animation-name: appearance;
+    animation-duration: 3s;
+}
+
+
+@keyframes appearance {
+    from {
+        width: 0%;
+        opacity: 0;
+    }
+    to {
+        width: 18rem;
+        opacity: 1;
+    }
+  }
