@@ -10,6 +10,14 @@ export const getAsync = createAsyncThunk(
     }
   );
 
+  export const getByUserAsync = createAsyncThunk(
+    'images/getbyuser',
+    async (username) => {
+      const response = await api.searchImagesByUser(username);
+      return response;
+    }
+  );
+
 const imageSlice = createSlice({
   name: 'images',
   initialState: {
@@ -23,7 +31,14 @@ const imageSlice = createSlice({
     extraReducers: (builder) => {
       builder
         .addCase(getAsync.fulfilled, (state, action) => {
-          state.status = 'idle';
+          if(action && action.payload) {
+              state.values = action.payload;
+          }
+          else {
+              state.values = {};
+          }
+        })
+        .addCase(getByUserAsync.fulfilled, (state, action) => {
           if(action && action.payload) {
               state.values = action.payload;
           }

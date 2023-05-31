@@ -21,6 +21,28 @@ const searchImages = async (search) => {
     }
 };
 
-export default {
-    searchImages: searchImages
+const searchImagesByUser = async (username) => {
+  if(!username) return undefined;
+
+  username = username.trim();
+  if(username.length === 0) return undefined;
+
+  try {
+    const response = await axios.get(
+      `${uri}/PixabayApi/PixabayApi/GetPicturesByUser/${encodeURIComponent(username)}`
+    );
+
+    const hits = response.data;
+    return hits;
+  } catch (error) {
+    console.error('Error fetching images:', error);
+    return undefined;
+  }
 };
+
+const functions = {
+  searchImages: searchImages,
+  searchImagesByUser: searchImagesByUser
+}
+
+export default functions;
