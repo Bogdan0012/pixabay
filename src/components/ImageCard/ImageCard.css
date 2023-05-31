@@ -10,6 +10,7 @@
 .image-card__container {
     margin: 10px;
     position: relative;
+    margin-bottom: 3rem;
 }
 
 .image-card:hover {

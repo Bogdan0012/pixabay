@@ -16,6 +16,9 @@ const Index = () => {
     const [items, setItems] = useState(null);
     const [type, setType] = useState("0");
 
+    const [hondaAlert, setHondaAlert] = useState(false);
+    const [bmwAlert, setBMWAlert] = useState(false);
+
     useEffect(() => {
         getRandomItems(images);
     }, [images]);
@@ -50,6 +53,28 @@ const Index = () => {
     const handleSearch = async (item) => {
         if(!item || !item.type || !item.txt) return;
 
+        if(item.txt.toLowerCase().includes('honda') || item.txt.toLowerCase().includes('хонда')) {
+            item.txt = "bmw";
+            await loadItems(item);
+            setHondaAlert(true);
+            return;
+        } else {
+            setHondaAlert(false);
+        }
+        
+        if(item.txt.toLowerCase().includes('bmw') || item.txt.toLowerCase().includes('бмв')) {
+            item.txt = "honda";
+            await loadItems(item);
+            setBMWAlert(true);
+            return;
+        } else {
+            setBMWAlert(false);
+        }
+
+        await loadItems(item);
+    }
+
+    const loadItems = async (item) => { 
         if(item.type === "0") {
             await dispatch(getImages(item.txt));
         } else if(item.type === "1") {
@@ -63,6 +88,8 @@ const Index = () => {
         <div className="container">
             <h1 className="brand__title">Finding pictures</h1>
             <ImageSearch onClick={ handleSearch } />
+            { hondaAlert && <p className="text-error">Only BMW!</p> }
+            { bmwAlert && <p className="text-error">Only Honda!</p> }
             { items && items.length === 0 && <p className="text-error">Not found</p> }
             <div className="result__container">
                 { type === "0" && 
