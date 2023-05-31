@@ -3,13 +3,17 @@
     color: #fff;
 }
 
-.user__image__container {
+.user__video__container {
     width: 15rem;
     min-width: 100px;
     float: left;
 }
 
-.user__image__container p {
+.user__video__container img {
+    width: 100%;
+}
+
+.user__video__container p {
     margin: 0;
     padding: 10px 20px;
     border: 1px solid #fff;
@@ -18,25 +22,13 @@
     color: #fff
 }
 
-.user__images__container {
-    position: relative;
-    width: 18rem;
-    height: 18rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #fff;
-}
-
-.user__images {
+.user__videos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.image {
+.video {
     height: 18rem;
     background-color: #fff;
     background-position: center;
@@ -58,7 +50,7 @@
 }
 
 @media screen and (max-width: 720px) {
-    .user__image__container {
+    .user__video__container {
         width: 100%;
         float: none;
     }

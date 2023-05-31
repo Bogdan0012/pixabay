@@ -26,7 +26,7 @@ const VideoCard = ({ item }) => {
             </video>
             <Link to={`/user/videos/${ item.user }`}><UserInfo item={ item } /></Link>
             <Likes likes={ item.likes } />
-            <Link to="" className='video__link'>View</Link>
+            { item.videos && item.videos.large && <a href={ item.videos.large.url } className='video__link' target="_blank">View</a>}
         </div>
     );
 }

@@ -4,6 +4,7 @@ import './App.css';
 import VideoCard from './components/VideoCard/VideoCard';
 import Index from './layouts/Index';
 import User from './layouts/User';
+import UserVideo from './layouts/UserVideo/UserVideo';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={ <Index /> } />        
           <Route path="/user/:username" exact element={ <User /> } />   
+          <Route path="/user/videos/:username" exact element={ <UserVideo /> } />   
         </Routes>
       </Router>
     </div>
